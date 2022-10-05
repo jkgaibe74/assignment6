@@ -1,0 +1,73 @@
+#     Module # 6
+
+#A  Consider a population consisting of the following values, which represents the number of ice cream purchases during the academic year for each of the five housemates.
+
+  8, 14, 16, 10, 11
+  
+  
+#  a. Compute the mean of this population.
+#  b. Select a random sample of size 2 out of the five members. 
+#  c. Compute the mean and standard deviation of your sample.
+#  d. Compare the Mean and Standard deviation of your sample to the entire population of this set (8,14, 16, 10, 11).
+  
+#a
+  x<-c(8,14,16,10,11)
+  > x
+  [1]  8 14 16 10 11
+
+  mean(x)
+
+  [1] 11.8
+  
+#b
+  
+   y <- sample(x, 2) 
+   > y
+   [1]  8 16
+   
+   
+#c
+   x<-c(8,14,16,10,11)
+   >    y <- sample(x, 2) 
+   > y
+   [1]  8 16
+   > mean(y)
+   [1] 12
+   > sd(y)
+   [1] 5.656854
+   
+#d
+   combn(c(8,14,16,10,11), 2) #show all possible sample
+   [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
+   [1,]    8    8    8    8   14   14   14   16   16    10
+   [2,]   14   16   10   11   16   10   11   10   11    11
+   
+  # the mean of the entire poluation is 11.8 and the mean of the selection is 12
+  # the sd of the entire poluation is 3.193744 and the sd of the selection is 5.656854
+
+#B
+ #  Suppose that the sample size n = 100 and the population proportion p = 0.95.
+   
+#   1.Does the sample proportion p have approximately a normal distribution? Explain.
+#   2.What is the smallest value of n for which the sampling distribution of p is approximately normal?   
+   
+#1. 
+    n = 100
+    p = 0.95
+   q = 0.05
+     np = 100 * 0.95
+     nq = 100 * 0.05
+     np = 95
+      nq = 5
+ # np = 95 Yes, it has a normal population proportion
+  
+#2. lowest is 5 so it is approximately normal
+
+#C
+#  Simulated coin tossing is probability better done using function called rbinom than using function called sample.  Explain.
+#      rbinom uses sample to simulate the probability of the coin toss
+      # here we have 10 flips with probability of 0.5 that it will be heads, 0 = heads 1 = tails
+      
+      > sample = rbinom(10,1,0.5)
+      > sample
+      [1] 0 1 0 1 0 0 0 1 1 1
